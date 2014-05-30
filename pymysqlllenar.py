@@ -3,11 +3,13 @@
 
 import MySQLdb as mdb
 
+# Aca se tienen los datos que se colocaron en pymysqlinit para el usuario
 con = mdb.connect('localhost', 'usuarioprueba', '123', 'pruebadb');
 
 with con:
 
     cur = con.cursor()
+
     cur.execute("DROP TABLE IF EXISTS Trabajadores")
     cur.execute("CREATE TABLE Trabajadores(Id INT PRIMARY KEY AUTO_INCREMENT, \
                  Name VARCHAR(25))")
